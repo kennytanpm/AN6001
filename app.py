@@ -7,8 +7,6 @@ import google.generativeai as genai
 api = os.getenv("makersuite")
 genai.configure(api_key=api)
 
-#AIzaSyCtrWvDsOxEUvrQy1AblUjvMlnfrWV6oSs
-
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 app = Flask(__name__)
