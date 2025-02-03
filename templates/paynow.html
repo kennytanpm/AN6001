@@ -85,13 +85,13 @@
                 console.log(payee_a);   
                 console.log(amount_t);
                 console.log("accounts[0] " + accounts[0]);
-                await contract.methods.weixin(amount_t, payer_a, payee_a).send({ from: accounts[0]});
+                await contract.methods.weixin(payer_a, payee_a,amount_t ).send({ from: accounts[0]});
             }
         
             async function transaction() {
                 const result = await contract.methods.check_transaction().call();
-                const payerAddress = result[0];
-                const payeeAddress = result[1];
+                const payerAddress = result[1];
+                const payeeAddress = result[0];
                 const amountTransferred = result[2];
         
                 document.getElementById('view_payer').innerText = "Payer: " + payerAddress;
